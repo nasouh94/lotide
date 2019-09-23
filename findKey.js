@@ -26,8 +26,9 @@ let findKey = function(object, callback) {
   return undefined;
 };
 
-let found = findKey(findKeyIn, (item) => item.stars === 2);
-console.log(found);
+// let found = findKey(findKeyIn, (item) => item.stars === 2);
+// console.log(found);
 
-assertEqual(found, "noma");
+// assertEqual(found, "noma");
 
+module.exports = findKey;

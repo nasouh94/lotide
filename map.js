@@ -8,8 +8,9 @@ const map = function(array, callback) {
   return results;
 };
 
-const results1 = map(words, word => word[0]);
+// const results1 = map(words, word => word[0]);
 
-console.log(results1); 
+// console.log(results1); 
 
 // printes out the first letter of every word inside the array 
+module.exports = map;
