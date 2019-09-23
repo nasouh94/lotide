@@ -1,58 +1,29 @@
-const eqArrays = require('./eqArrays');
-const assertArraysEqual = require('./assertArraysEqual');
 
-// const eqArrays = function(array1, array2) {
-//   if (array1.length === array2.length) {
-//     for (let i = 0; i < array1.length; i ++) {
-//       if (array1[i] !== array2[i]) {
-//         return false;
-//       }
-//     }
+// const middle = function(array1) {
+//   if(array1.length <= 3) {
+//     return [];
+//   }else if(array1.length % 2 === 0) {
+//     var middle = [array1[(array1.length)/2 -1], array1[(array1.length/2)]];
 
+//     return middle;
 //   } else {
-//     return false;
+//     //console.log("odd");
+//     var oddMiddle = [Math.floor((array1.length)/2) +1];
+//     return oddMiddle;
 //   }
-
-//   return true;
 // };
 
-// const assertArraysEqual = function(array1, array2) {
-//   if(array1.length === array2.length) {
-//     for (var i = 0; i < array1.length; i ++) {
-//       if(array1[i] !== array2[i]) {
-//         //console.log("Arrays are not the same");
-//         return false;
-//       }
-//     }
+// module.exports = middle;
 
-//   } else {
-//     return false;
-//   };
-// return true;
-// };
+const middle = function(arr) {
+  if (arr.length < 3) return [];
 
-const middle = function(array1) {
-  if(array1.length <= 2) {
-    //console.log("no middle");
-    return [];
+  const mid = Math.floor(arr.length / 2);
 
-  }else if(array1.length % 2 === 0) {
-    //console.log("even");
-    var middle = [array1[(array1.length)/2 -1], array1[(array1.length/2)]];
+  return arr.length % 2 ?
+    arr.slice(mid, mid + 1) : // Odd
+    arr.slice(mid - 1, mid + 1); // Even
 
-    return middle;
-  } else {
-    //console.log("odd");
-    var oddMiddle = [Math.floor((array1.length)/2) +1];
-    return oddMiddle;
-  }
 };
-
-console.log(middle([1])); // => []
-console.log(middle([1, 2])); // => [])
-console.log(middle([1, 2, 3])) // => [2]
-console.log(middle([1, 2, 3, 4, 5]) )// => [3])
-console.log(middle([1, 2, 3, 4]) );// => [2, 3]
-console.log(middle([1, 2, 3, 4, 5, 6])); // => [3, 4])
 
 module.exports = middle;
